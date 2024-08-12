@@ -72,7 +72,7 @@ export function Form() {
 
       <button
         type="submit"
-        className={`${VARIANTS.bg_orange_hard} hover:bg-orange-700 ${VARIANTS.color_text} w-full px-6 py-2 font-semibold text-xl rounded-xl`}
+        className={`bg-[#4C3B4D] hover:bg-[#575058ef] ${VARIANTS.color_text} w-full px-6 py-2 font-semibold text-xl rounded-xl`}
       >
         Send Message
       </button>

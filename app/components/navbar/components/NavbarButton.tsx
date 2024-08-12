@@ -8,6 +8,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { VARIANTS } from "@/app/constants/variants";
 import Link from "next/link";
 import { navLinks } from "../NavBar";
+import { ButtonDownloadCV } from "./ButtonDownloadCV";
 
 const MENU_VARIANTS = {
   open: {
@@ -36,12 +37,12 @@ export function NavbarButton() {
   function closeNav() {
     setNav(false);
   }
-  
+
   return (
     <>
       <button
         onClick={toggleNav}
-        className={`md:hidden absolute top-5 right-5 border rounded ${VARIANTS.color_text} ${VARIANTS.border_white} p-1 z-20`}
+        className={`md:hidden  fixed top-5 right-5 border rounded ${VARIANTS.color_text} ${VARIANTS.border_white} p-1 z-20`}
       >
         {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
       </button>
@@ -60,6 +61,8 @@ export function NavbarButton() {
               </Link>
             </li>
           ))}
+
+          <ButtonDownloadCV />
         </ul>
       </motion.div>
     </>

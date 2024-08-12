@@ -10,7 +10,7 @@ const SKILLS_ICONS = [
 
 export function Skills() {
   return (
-    <div className={`bg-[linear-gradient(to_top,#000,#381a5f_80%)] py-24`}>
+    <div className={`${VARIANTS.gradient_skills} py-24`}>
       <div
         className={`${VARIANTS.color_text} max-w-[1000px] mx-auto p-8 text-center`}
       >

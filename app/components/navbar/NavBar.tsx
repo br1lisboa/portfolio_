@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { VARIANTS } from "@/app/constants/variants";
 import { NavbarButton } from "./components/NavbarButton";
+import { ButtonDownloadCV } from "./components/ButtonDownloadCV";
 
 export const navLinks = [
   { title: "About", path: "#about" },
@@ -11,8 +12,8 @@ export const navLinks = [
 export function NavBar() {
   return (
     <div className={`${VARIANTS.color_text} pt-6`}>
-      <div className="hidden md:flex items-center px-4 py-2 mx-auto max-w-[400px]">
-        <ul className="flex flex-row p-4 space-x-8">
+      <div className="hidden md:flex items-center px-4 py-2 mx-auto max-w-[600px]">
+        <ul className="flex flex-row p-4 gap-8 justify-between w-full items-center">
           {navLinks.map(({ title, path }) => (
             <li key={path}>
               <Link href={path}>
@@ -39,6 +40,8 @@ export function NavBar() {
               </div>
             </Link>
           </li>
+
+          <ButtonDownloadCV />
         </ul>
       </div>
 

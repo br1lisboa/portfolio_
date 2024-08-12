@@ -37,8 +37,8 @@ export function Hero() {
 
       <div className="relative">
         <div className="text-8xl font bold text-center">
-          <h1 className="text-[#98B4CE]">Hi, I am</h1>
-          <h1 className="text-[#E48A57]">John Doe</h1>
+          <h1 className={`${VARIANTS.color_text}`}>Hi, I am</h1>
+          <h1 className={`${VARIANTS.color_text_secondary}`}>John Doe</h1>
 
           {MOTIONS_ICONS.map(({ icon, x, y, height, width, left, id }) => (
             <HeroCards
