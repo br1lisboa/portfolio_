@@ -9,18 +9,18 @@ import { VARIANTS } from "@/app/constants/variants";
 const CONTACTS = [
   {
     icon: phone,
-    text: "+ 09102339393",
+    text: "+54 9 11 2391 3518",
   },
   {
     icon: email,
-    text: "brlisbo@gmail.com",
+    text: "bruno.lisboa.dev@gmail.com",
   },
 ];
 
 export function Contact() {
   return (
     <div
-      className={`max-w-[1000px] mx-auto flex flex-col items-center lg:flex-row lg:justify-center ${VARIANTS.color_text} p-8 rounded-lg space-y-8 lg:space-y-0 lg:space-x-8`}
+      className={`max-w-[1200px] mx-auto flex flex-col items-center lg:flex-row lg:justify-center ${VARIANTS.color_text} p-8 rounded-lg space-y-8 lg:space-y-0 lg:space-x-8`}
       id="contact"
     >
       <div className="flex justify-center items-center">

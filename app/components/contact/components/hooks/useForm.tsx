@@ -2,6 +2,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "emailjs-com";
+import { useEffect, useState } from "react";
 
 type Form = {
   firstName: string;
@@ -11,23 +12,53 @@ type Form = {
   message: string | undefined;
 };
 
-export function useContactForm() {
-  const schema = z.object({
-    firstName: z.string().min(3, { message: "First name is required" }).max(10),
-    lastName: z.string().min(3, { message: "Last name is required" }).max(10),
-    email: z.string().email({ message: "Invalid email" }),
-    phone: z.string().min(10, { message: "Invalid phone number" }),
-    message: z.string().max(200, { message: "Max 200 characters" }).optional(),
-  });
+const schema = z.object({
+  firstName: z
+    .string({ required_error: "Please tell me your name." })
+    .min(3, { message: "Please tell me your name." })
+    .max(20, { message: "Your name seems very long!" }),
+  lastName: z
+    .string({ required_error: "Please tell me your last name." })
+    .min(3, { message: "Please tell me your last name." })
+    .max(20, { message: "Your last name seems very long!" }),
+  email: z
+    .string({ required_error: "Please leave me an email." })
+    .email({ message: "Your email doesn't seem correct." }),
+  phone: z
+    .string({
+      required_error:
+        "If you want, leave me your phone number! WhatsApp is okay.",
+    })
+    .min(6, { message: "Leave me your phone number! WhatsApp is cool :)!" })
+    .optional(),
+  message: z
+    .string()
+    .max(200, {
+      message: "Message too long! Maximum 200 characters! Thank you!.",
+    })
+    .optional(),
+});
 
-  const { control, handleSubmit } = useForm<Form>({
-    defaultValues: undefined,
+export function useContactForm() {
+  const { control, handleSubmit, reset } = useForm<Form>({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      message: "",
+    },
     mode: "all",
     resolver: zodResolver(schema),
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
+
   async function onSubmit(formData: Form) {
     try {
+      setIsLoading(true);
+
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
@@ -39,14 +70,18 @@ export function useContactForm() {
         process.env.NEXT_PUBLIC_EMAILJS_USER_ID
       );
 
-      console.log("exito");
+      reset();
     } catch (error) {
-      console.log("error");
+      setError(true);
+    } finally {
+      setIsLoading(false);
     }
   }
 
   return {
     control,
     handleSubmit: handleSubmit(onSubmit),
+    isLoading,
+    error,
   };
 }

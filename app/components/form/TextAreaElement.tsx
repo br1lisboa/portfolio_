@@ -5,10 +5,13 @@ type Props = {
   control: Control<any>;
   name: string;
   placeholder: string;
+  isDisabled?: boolean;
 };
 
 export function TextAreaElement(props: Props) {
-  const { control, name, placeholder } = props;
+  const { control, name, placeholder, isDisabled } = props;
+
+  const disabled = isDisabled ? "bg-slate-600" : "";
 
   return (
     <Controller
@@ -29,8 +32,9 @@ export function TextAreaElement(props: Props) {
         return (
           <div className="flex flex-col space-y-2">
             <textarea
+              disabled={isDisabled}
               placeholder={placeholder}
-              className={`rounded-xl p-3 focus:outline-none focus:ring-2 ${bg} ${focusRing}`}
+              className={`rounded-xl p-3 focus:outline-none focus:ring-2 ${bg} ${focusRing} ${disabled}`}
               value={value}
               onChange={onChange}
             />

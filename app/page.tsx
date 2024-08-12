@@ -11,7 +11,7 @@ import {
 import { FixedBar } from "./components/fixed-bar/FixedBar";
 
 export const metadata: Metadata = {
-  title: "Portfolio | Software Developer",
+  title: "Bruno | Software Developer",
   description: "My personal portfolio website, showcasing my work and skills.",
 };
 

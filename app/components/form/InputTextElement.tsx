@@ -7,10 +7,20 @@ type Props = {
   placeholder: string;
   type: string;
   className?: string;
+  isDisabled?: boolean;
 };
 
 export function InputTextElement(props: Props) {
-  const { control, name, placeholder, type = "text", className } = props;
+  const {
+    control,
+    name,
+    placeholder,
+    type = "text",
+    className,
+    isDisabled,
+  } = props;
+
+  const disabled = isDisabled ? "bg-slate-600" : "";
 
   return (
     <Controller
@@ -31,9 +41,10 @@ export function InputTextElement(props: Props) {
         return (
           <div className={`flex flex-col space-y-2 ${className}`}>
             <input
+              disabled={isDisabled}
               type={type}
               placeholder={placeholder}
-              className={`rounded-xl p-3 focus:outline-none focus:ring-2 ${bg} ${focusRing}`}
+              className={`rounded-xl p-3 focus:outline-none focus:ring-2 ${bg} ${focusRing} ${disabled}`}
               value={value}
               onChange={onChange}
             />

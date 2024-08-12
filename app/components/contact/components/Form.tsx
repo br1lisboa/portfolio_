@@ -32,7 +32,7 @@ const FORM_INPUTS = [
 ];
 
 export function Form() {
-  const { handleSubmit, control } = useContactForm();
+  const { handleSubmit, control, isLoading } = useContactForm();
 
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
@@ -47,6 +47,7 @@ export function Form() {
                 type={type}
                 key={name}
                 className="col-span-1 md:col-span-1"
+                isDisabled={isLoading}
               />
             );
           }
@@ -59,6 +60,7 @@ export function Form() {
               type={type}
               key={name}
               className="col-span-1 md:col-span-1"
+              isDisabled={isLoading}
             />
           );
         })}
@@ -68,11 +70,13 @@ export function Form() {
         control={control}
         name="message"
         placeholder="Write me!"
+        isDisabled={isLoading}
       />
 
       <button
         type="submit"
-        className={`bg-[#4C3B4D] hover:bg-[#575058ef] ${VARIANTS.color_text} w-full px-6 py-2 font-semibold text-xl rounded-xl`}
+        className={`bg-[#4C3B4D] hover:bg-[#575058ef] ${VARIANTS.color_text} w-full px-6 py-2 font-semibold text-xl rounded-xl ${isLoading ? "cursor-not-allowed" : "cursor-pointer"}`}
+        disabled={isLoading}
       >
         Send Message
       </button>
