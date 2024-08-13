@@ -11,7 +11,7 @@ type Props = {
 export function TextAreaElement(props: Props) {
   const { control, name, placeholder, isDisabled } = props;
 
-  const disabled = isDisabled ? "bg-slate-600" : "";
+  const disabled = isDisabled ? "bg-slate-600 cursor-not-allowed" : "";
 
   return (
     <Controller

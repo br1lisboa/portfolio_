@@ -9,6 +9,7 @@ import {
   Skills,
 } from "./components";
 import { FixedBar } from "./components/fixed-bar/FixedBar";
+import { Toasty } from "./components/toasty/Toasty";
 
 export const metadata: Metadata = {
   title: "Bruno | Software Developer",
@@ -26,6 +27,7 @@ export default function Home() {
       <Skills />
       <Contact />
       <Footer />
+      <Toasty />
     </div>
   );
 }

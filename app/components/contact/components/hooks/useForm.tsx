@@ -2,7 +2,8 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "emailjs-com";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 type Form = {
   firstName: string;
@@ -70,8 +71,12 @@ export function useContactForm() {
         process.env.NEXT_PUBLIC_EMAILJS_USER_ID
       );
 
+      toast.success("Message sent successfully! I will contact you soon.");
+
       reset();
     } catch (error) {
+      toast.error("Oh no! Something went wrong. Please try again.");
+
       setError(true);
     } finally {
       setIsLoading(false);
