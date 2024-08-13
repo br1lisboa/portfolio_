@@ -32,7 +32,7 @@ const MOTIONS_ICONS = [
 
 export function Hero() {
   return (
-    <div className={`pt-10 md:pt-24 relative overflow-clip ${VARIANTS.gradient_hero}`}>
+    <div className={`py-24 md:pt-24 md:py-0 space-y-12 md:space-y-0 relative overflow-clip ${VARIANTS.gradient_hero}`}>
       <div
         className={`absolute rounded-[50%] w-[3000px] h-[1300px] top-[550px] left-[50%] -translate-x-1/2 ${VARIANTS.gradient_hero_rounded}`}
       />
