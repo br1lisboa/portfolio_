@@ -11,15 +11,16 @@ type Props = {
   height: number;
   width: number;
   left: string;
+  top?: string;
 };
 
-export function HeroCards(props: Props) {
-  const { icon, x, y, height, width, left } = props;
+export function FreeIcons(props: Props) {
+  const { icon, x, y, height, width, left, top } = props;
 
   return (
     <>
       <motion.div
-        className={`absolute left-[${left}] top-[170px]`}
+        className={`absolute left-[${left}] top-[${top}]`}
         drag
         style={{ x, y }}
       >

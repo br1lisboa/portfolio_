@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 
-import project_1 from "../../../public/project.jpg";
+import CTA from "../../../public/CTA.png";
+import PORT from "../../../public/port.png";
 
 import { VARIANTS } from "@/app/constants/variants";
 import Image from "next/image";
@@ -12,40 +13,30 @@ import { CustomHeader } from "../custom-header/CustomHeader";
 const PROJECTS = [
   {
     title: "CTA",
-    desc: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    desc: "A Single Page Application (SPA) developed for a CTA (Confederation of Workers) in Argentina. The application includes authentication and an admin panel where administrators can upload news articles and opinions. Users can download forms and communicate directly with the organization through the platform.",
     devStack:
       "Next JS, TypeScript, Tailwind CSS, Firebase, Firestore, Firebase Auth",
-    link: "#",
-    git: "#",
-    src: project_1,
+    link: "https://cta-next-br1lisboa.vercel.app/",
+    git: "https://github.com/br1lisboa/CTA-NEXT",
+    src: CTA,
     id: 1,
   },
   {
-    title: "CTA",
-    desc: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    title: "Contact Me!",
+    desc: "A presentation Single Page Application (SPA) with a hybrid integration of server-side rendering and client-side rendering. It features forms with multiple validations, email service integration, and floating notifications. The application allows users to introduce themselves and communicate through various channels, provides links to relevant resources, and enables PDF downloads.",
     devStack:
-      "Next JS, TypeScript, Tailwind CSS, Firebase, Firestore, Firebase Auth",
-    link: "#",
-    git: "#",
-    src: project_1,
+      "Next JS, TypeScript, Tailwind CSS, RHF, zod, Toasty, EMAILJS",
+    link: "https://brunolisboa-dev.vercel.app/",
+    git: "https://github.com/br1lisboa/portfolio_",
+    src: PORT,
     id: 2,
-  },
-  {
-    title: "CTA",
-    desc: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
-    devStack:
-      "Next JS, TypeScript, Tailwind CSS, Firebase, Firestore, Firebase Auth",
-    link: "#",
-    git: "#",
-    src: project_1,
-    id: 3,
   },
 ];
 
 export function Portfolio() {
   return (
     <div
-      className={`${VARIANTS.color_text} ${VARIANTS.gradient_portfolio} space-y-10 p-3`}
+      className={`${VARIANTS.color_text} ${VARIANTS.gradient_portfolio} space-y-10 px-3 pt-10`}
       id="portfolio"
     >
       <CustomHeader primaryText="My" secondaryText="Projects" />
@@ -79,12 +70,16 @@ export function Portfolio() {
                 <Link
                   href={link}
                   className={`hover:${VARIANTS.color_text_secondary}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Link
                 </Link>
                 <Link
                   href={git}
                   className={`hover:${VARIANTS.color_text_secondary}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Git
                 </Link>

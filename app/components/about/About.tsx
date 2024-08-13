@@ -41,7 +41,7 @@ const CARDS = [
 
 export function About() {
   return (
-    <div className="py-10 md:py-24 max-w-[1200px] mx-auto" id="about">
+    <div className="pt-10 max-w-[1200px] mx-auto" id="about">
       <CustomHeader primaryText="About" secondaryText="Me" />
 
       <div className="grid grid-cols-1 md:grid-cols-8 gap-6 place-items-center px-3">
