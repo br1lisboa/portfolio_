@@ -1,11 +1,21 @@
 import { VARIANTS } from "@/app/constants/variants";
-import { FaCss3Alt, FaHtml5, FaJsSquare, FaReact } from "react-icons/fa";
+import { FaJsSquare, FaReact } from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { SiNextdotjs } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
+import { TbBrandMongodb } from "react-icons/tb";
+import { SiPrisma } from "react-icons/si";
+import { TbBrandMysql } from "react-icons/tb";
 
 const SKILLS_ICONS = [
-  { Icon: FaHtml5, label: "HTML" },
-  { Icon: FaCss3Alt, label: "CSS" },
+  { Icon: RiTailwindCssFill, label: "TAILWIND" },
+  { Icon: SiNextdotjs, label: "NextJS" },
   { Icon: FaJsSquare, label: "JavaScript" },
   { Icon: FaReact, label: "React" },
+  { Icon: TbBrandReactNative, label: "React Native" },
+  { Icon: TbBrandMongodb, label: "MONGODB" },
+  { Icon: SiPrisma, label: "Prisma ORM" },
+  { Icon: TbBrandMysql, label: "My SQL" },
 ];
 
 export function Skills() {

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import CTA from "../../../public/CTA.png";
 import PORT from "../../../public/port.png";
+import CASCA from "../../../public/casca2.png";
 
 import { VARIANTS } from "@/app/constants/variants";
 import Image from "next/image";
@@ -12,24 +13,31 @@ import { CustomHeader } from "../custom-header/CustomHeader";
 
 const PROJECTS = [
   {
+    title: "CASCA E-commerce",
+    desc: "A fully-featured e-commerce platform designed with Next.js 14 for a secure, responsive, and multilingual shopping experience. Casca-Shop is a comprehensive e-commerce platform, equipped with powerful tools and integrations for building a seamless online store. Features include: Protected Routes, restrict access to specific sections for secure user management. Server-Side Pagination: Efficiently handles large data volumes. User Management: Supports creating, editing, and role-based access control. And more ... ",
+    devStack: "Next 14, TypeScript, Tailwind CSS, MySQL, Docker, Paypal, i18n",
+    link: "https://e-commerce-casca.vercel.app/es",
+    git: "https://github.com/br1lisboa/e-commerce",
+    src: CASCA,
+    id: 1,
+  },
+  {
     title: "CTA",
     desc: "A Single Page Application (SPA) developed for a CTA (Confederation of Workers) in Argentina. The application includes authentication and an admin panel where administrators can upload news articles and opinions. Users can download forms and communicate directly with the organization through the platform.",
-    devStack:
-      "Next JS, TypeScript, Tailwind CSS, Firebase, Firestore, Firebase Auth",
+    devStack: "Next JS, TypeScript, Tailwind CSS, Firebase, Firestore, Firebase Auth",
     link: "https://cta-next-br1lisboa.vercel.app/",
     git: "https://github.com/br1lisboa/CTA-NEXT",
     src: CTA,
-    id: 1,
+    id: 2,
   },
   {
     title: "Contact Me!",
     desc: "A presentation Single Page Application (SPA) with a hybrid integration of server-side rendering and client-side rendering. It features forms with multiple validations, email service integration, and floating notifications. The application allows users to introduce themselves and communicate through various channels, provides links to relevant resources, and enables PDF downloads.",
-    devStack:
-      "Next JS, TypeScript, Tailwind CSS, RHF, zod, Toasty, EMAILJS",
+    devStack: "Next JS, TypeScript, Tailwind CSS, RHF, zod, Toasty, EMAILJS",
     link: "https://brunolisboa-dev.vercel.app/",
     git: "https://github.com/br1lisboa/portfolio_",
     src: PORT,
-    id: 2,
+    id: 3,
   },
 ];
 
@@ -55,7 +63,7 @@ export function Portfolio() {
                 : "flex-col md:flex-row"
             }`}
           >
-            <div className="space-y-2 max-w-[550px]">
+            <div className="space-y-2 max-w-[550px] p-6">
               <h2
                 className={`text-7xl my-4 ${VARIANTS.color_text}`}
               >{`0${id}`}</h2>
